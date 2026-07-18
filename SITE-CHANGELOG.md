@@ -14,3 +14,7 @@ project docs; docs lead, site never leads. Truth gates enforced on every push.
 - Unchanged and intentional: `noindex,nofollow` and the demo state stay until launch.
   Cadence never displayed. No licensed/bonded/insured, NHWA, or testimonial claims
   beyond what the seed already carried (gates: T115 insurance, accreditation, T149).
+
+## 2026-07-18 (later)
+- Enabled Netlify form detection on the phw-site project; this deploy re-parses the
+  HTML so the `contact` and `quick-request` forms register in the Netlify dashboard.
