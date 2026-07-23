@@ -3,6 +3,21 @@
 Every change to the live site is logged here (newest first). The site follows the
 project docs; docs lead, site never leads. Truth gates enforced on every push.
 
+## 2026-07-23 (Phase B: GO-LIVE)
+- **Published.** Removed the `noindex,nofollow` meta and the demo ribbon; site is now public.
+- Removed the three testimonial placeholders (real ones pending, T149/T198/T199); section
+  restored when they land.
+- Footer: added the canonical NAP phone (360) 207-4529 and the DBA disclosure
+  "RAY YOKOM LLC dba Pacific Home Watch"; dropped the "preview mockup" line; added get@ address.
+- Social tags (og:image, og:url) repointed from the netlify.app URL to https://pacifichomewatch.com.
+- Claims basis at go-live: insurance/E&O confirmed **bound** (Andrew, 7/23), so
+  "Licensed, bonded & insured" stays; NHWA wording is "member" only (no accreditation claim
+  before the ~8/15 review). Pricing, forms untouched. Cadence never displayed; no em dashes.
+- Gate note: Margie was notified via **Collin's solo email** (not the both-partners call the
+  T192 gate specified); Andrew's decision was to proceed on that basis.
+- Next: point pacifichomewatch.com DNS at Netlify (guided), then post-publish verification
+  (contact-form test to get@, robots, og preview).
+
 ## 2026-07-23 (Phase A: photos + favicon/social, private)
 - **Photos slotted into the live source** per the Photo Slot Map (no publish; site stays
   noindex + demo ribbon on the un-pointed netlify.app URL).
