@@ -2,9 +2,18 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pacific Home Watch · Website Preview v5</title>
+<title>Pacific Home Watch · Home Watch on San Juan Island</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-512.png" sizes="512x512" type="image/png">
+<meta name="description" content="Professional home watch on San Juan Island: regular visual checks of your home while you're away, with a time-stamped photo report after every visit.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pacific Home Watch · Home Watch on San Juan Island">
+<meta property="og:description" content="A second set of eyes on your island home while you're away, with a time-stamped photo report after every visit.">
+<meta property="og:image" content="https://phw-site.netlify.app/assets/hero-lighthouse-shoreline.jpg">
+<meta property="og:url" content="https://phw-site.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
 <!-- sync-probe: SALISH-122 -->
-<!-- v4 (7/7 night): family review-panel session integrated — home slimmed, services restructured
+<!-- v4 (7/7 night): family review-panel session integrated - home slimmed, services restructured
      (frequency stated: 1x/2x/4x monthly), à la carte boxed, Keep Watch Together removed (email campaign later),
      How It Works = horizontal flow + house-mark check graphic, Contact redesigned, fonts/spacing/centering up. -->
 
@@ -62,6 +71,27 @@
   .hero .eyebrow{font-size:1.05rem;color:#cdd8cf}
   .hero .sub{font-size:1.3rem;max-width:640px;margin:0 auto 1.7em;color:#e9ece6}
   .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  /* photo hero (homepage only): green tint over image keeps white text legible + on-brand */
+  .hero--photo{
+    background:
+      linear-gradient(135deg,rgba(38,53,43,.74) 0%,rgba(46,64,52,.64) 55%,rgba(55,80,63,.56) 100%),
+      url("assets/hero-lighthouse-shoreline.jpg");
+    background-size:cover;background-position:center;
+  }
+  /* full-width scenery band with dark overlay + white caption */
+  .photoband{position:relative;display:flex;align-items:center;min-height:300px;text-align:center;color:#fff;padding:64px 0}
+  .photoband::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(42,41,37,.42),rgba(46,64,52,.58));z-index:0}
+  .photoband>.wrap{position:relative;z-index:1;width:100%}
+  .photoband h2{color:#fff}
+  .photoband .eyebrow{color:#e9ece6}
+  .photoband.ferry{background:url("assets/band-ferry-crossing.jpg") center/cover}
+  /* photo behind an existing dark band (marina); overlay preserves white text */
+  .band--photo{background:none}
+  .band--photo::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(42,41,37,.60),rgba(46,64,52,.66));z-index:0}
+  .band--photo.marina{position:relative;background:url("assets/band-marina-sunset.jpg") center/cover}
+  .band--photo>.wrap{position:relative;z-index:1}
+  /* founder card photo */
+  .card .founder-photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block}
   /* trust strip */
   .trust{background:var(--seaglass);padding:28px 0}
   .trust ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:1rem;color:var(--fir);font-weight:600}
@@ -162,7 +192,7 @@
   @media(max-width:640px){section{padding:52px 0}section.wrap{padding-top:52px;padding-bottom:52px}.page>section:first-child:not(.hero){padding-top:56px}.page>section:first-child:not(.hero)>.center:first-child{margin-bottom:32px}.hero{padding:66px 0 58px}.lockup .wordmark{font-size:1.05rem}}
 </style>
 
-<!-- ===== reusable submark (house + trees icon; sine-wave horizon canonical per 7/9 handback — matches Brand Kit - Logo Files (PHW)) ===== -->
+<!-- ===== reusable submark (house + trees icon; sine-wave horizon canonical per 7/9 handback - matches Brand Kit - Logo Files (PHW)) ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="phw-mark" viewBox="29 19 182 182">
     <circle cx="120" cy="110" r="87.4" fill="none" stroke="currentColor" stroke-width="5.7"/>
@@ -204,12 +234,12 @@
 <main>
   <!-- ============ HOME (slimmed per 7/7 panel: definition + services + proof-of-people + testimonials + CTA) ============ -->
   <div class="page active" id="home">
-    <section class="hero">
+    <section class="hero hero--photo">
       <div class="wrap">
         <div class="eyebrow">Home watch · San Juan Island</div>
         <h1>Small problems get expensive fast.</h1>
         <p class="sub">A second set of eyes on your island home while you're away: catching trouble early, with a time-stamped photo report after every home watch visit.</p>
-        <!-- HERO IMAGERY PLACEHOLDER (Eric 7/7): rotating house/issue photos (storm, leak, tree-on-house) — awaits our own photography, T132 -->
+        <!-- HERO IMAGERY PLACEHOLDER (Eric 7/7): rotating house/issue photos (storm, leak, tree-on-house) - awaits our own photography, T132 -->
         <div class="cta-row">
           <button class="btn" data-go="contact">Request a Visit</button>
           <button class="btn ghost" data-go="services">See our plans</button>
@@ -259,7 +289,7 @@
           </div></div>
           <div class="tdots"></div>
         </div>
-        <p style="text-align:center;font-size:.8rem;color:var(--driftwood);margin-top:16px">Sample quotes shown for layout only (tone + length targets). Swap in three real client testimonials before launch — first name + location, one concrete detail each.</p>
+        <p style="text-align:center;font-size:.8rem;color:var(--driftwood);margin-top:16px">Sample quotes shown for layout only (tone + length targets). Swap in three real client testimonials before launch: first name + location, one concrete detail each.</p>
       </div>
     </section>
 
@@ -281,7 +311,7 @@
     <section class="wrap">
       <div class="center"><div class="eyebrow">Doing it the right way</div><h2>Backed by more than promises.</h2></div>
       <div class="cards3">
-        <div class="card"><h3>A local craftsman in the field</h3><p>Collin's trade background means what we find gets fixed correctly and fast.</p></div>
+        <div class="card"><h3>A local craftsman in the field</h3><p>C.R. Ray's trade background means what we find gets fixed correctly and fast.</p></div>
         <div class="card"><h3>Licensed, Bonded &amp; Insured</h3><p>Home-watch-specific coverage, not a generic policy, so the care you trust is backed by real protection.</p></div>
         <div class="card"><h3>WA Licensed Home Inspector</h3><p>Formal inspection training most home watch operators don't have, applied to every visit.</p></div>
       </div>
@@ -289,7 +319,7 @@
       <div class="center" style="margin-top:26px"><button class="btn alt" data-go="story">Read our story</button></div>
     </section>
 
-    <section class="band">
+    <section class="band band--photo marina">
       <div class="wrap"><h2>Leaving the island? Let's talk.</h2>
         <p style="color:#dfe6e0;max-width:520px;margin:0 auto 1.4em">Tell us about your home and when you're away. We'll take it from here.</p>
         <form class="form" name="quick-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" style="margin:0 auto;text-align:left">
@@ -306,6 +336,9 @@
 
   <!-- ============ HOW IT WORKS (moved up in nav · horizontal flow + house-mark check graphic) ============ -->
   <div class="page" id="how">
+    <section class="photoband ferry">
+      <div class="wrap"><div class="eyebrow">Local &amp; rooted</div><h2>On the island, and here year-round.</h2></div>
+    </section>
     <section class="wrap">
       <div class="center"><div class="eyebrow">How it works</div><h2>Simple, and proven every visit.</h2></div>
       <div class="flow">
@@ -404,7 +437,7 @@
       <div class="wrap">
         <h1 style="font-size:clamp(2rem,4.5vw,3rem)">Our story.</h1>
         <p class="sub" style="margin-bottom:0">Locals you can depend on.</p>
-        <!-- 💬 tagline unresolved in the 7/7 panel ("locals who love houses" / "locals you can depend on" both floated) — confirm wording -->
+        <!-- 💬 tagline unresolved in the 7/7 panel ("locals who love houses" / "locals you can depend on" both floated) - confirm wording -->
       </div>
     </section>
     <section class="wrap" style="max-width:760px">
@@ -416,8 +449,8 @@
       <p>With home-watch-specific coverage, so the care you trust is backed by real protection.</p>
       <h3 style="margin-top:1.5em">Who's behind it.</h3>
       <div class="cards" style="margin-top:12px">
-        <div class="card"><div style="border:2px dashed var(--driftwood);border-radius:8px;padding:26px 0;text-align:center;color:var(--driftwood);font-size:.85rem;margin-bottom:12px">[Founder photo · Collin — in the field]</div><h3>Collin Ray</h3><p>Field &amp; trade: a craftsman's eye on every detail, backed by a Washington State home inspector license.</p></div>
-        <div class="card"><div style="border:2px dashed var(--driftwood);border-radius:8px;padding:26px 0;text-align:center;color:var(--driftwood);font-size:.85rem;margin-bottom:12px">[Founder photo · Andrew — at work]</div><h3>Andrew Yokom</h3><p>Systems &amp; client care: reporting, scheduling, and making sure no detail slips through.</p></div>
+        <div class="card"><img class="founder-photo" src="assets/founder-cr-ray.jpg" alt="C.R. Ray, Pacific Home Watch co-founder"><h3>C.R. Ray</h3><p>Field &amp; trade: a craftsman's eye on every detail, backed by a Washington State home inspector license.</p></div>
+        <div class="card"><img class="founder-photo" src="assets/founder-andrew-yokom.jpg" alt="Andrew Yokom, Pacific Home Watch co-founder"><h3>Andrew Yokom</h3><p>Systems &amp; client care: reporting, scheduling, and making sure no detail slips through.</p></div>
       </div>
       <div class="center" style="margin-top:28px"><button class="btn" data-go="contact">Schedule a visit</button></div>
     </section>
