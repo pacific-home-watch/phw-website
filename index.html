@@ -152,7 +152,8 @@
   /* form */
   .form{background:#fff;border:1px solid var(--seaglass);border-radius:12px;padding:32px;max-width:560px}
   .form label{display:block;font-size:.9rem;font-weight:600;color:var(--fir);margin:14px 0 5px}
-  .form input,.form textarea{width:100%;border:1px solid var(--driftwood);border-radius:7px;padding:11px 13px;font-family:var(--sans);font-size:1rem;background:var(--fog)}
+  .form input,.form textarea,.form select{width:100%;border:1px solid var(--driftwood);border-radius:7px;padding:11px 13px;font-family:var(--sans);font-size:1rem;background:var(--fog)}
+  .form select{color:var(--ink)}
   .form textarea{min-height:90px;resize:vertical}
   /* contact page */
   .reachrow{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:26px 0 40px}
@@ -311,6 +312,19 @@
           <p hidden><label>Leave this blank: <input name="bot-field"></label></p>
           <label>Name</label><input name="name" placeholder="Your name">
           <label>Email or phone</label><input name="email-or-phone" placeholder="you@email.com or (360) 000-0000">
+          <label>How did you hear about us?</label>
+          <select name="source">
+            <option value="" selected>Choose one (optional)</option>
+            <option>Realtor or real estate agent</option>
+            <option>Insurance agent or another local business</option>
+            <option>A current client referred me</option>
+            <option>Friend or neighbor</option>
+            <option>Google or online search</option>
+            <option>Ferry or airport rack card</option>
+            <option>Postcard or letter in the mail</option>
+            <option>Chamber or island directory</option>
+            <option>Other</option>
+          </select>
           <label>Your home + dates away (optional)</label><textarea name="message" placeholder="A little about your home and when you're away…"></textarea>
           <button class="btn" style="margin-top:18px;width:100%">Request a Visit</button>
         </form>
@@ -474,6 +488,19 @@
         <label>Email</label><input name="email" type="email" placeholder="you@email.com">
         <label>Phone</label><input name="phone" placeholder="(360) 000-0000">
         <label>Property location</label><input name="property-location" placeholder="San Juan Island area">
+        <label>How did you hear about us?</label>
+        <select name="source">
+          <option value="" selected>Choose one (optional)</option>
+          <option>Realtor or real estate agent</option>
+          <option>Insurance agent or another local business</option>
+          <option>A current client referred me</option>
+          <option>Friend or neighbor</option>
+          <option>Google or online search</option>
+          <option>Ferry or airport rack card</option>
+          <option>Postcard or letter in the mail</option>
+          <option>Chamber or island directory</option>
+          <option>Other</option>
+        </select>
         <label>How can we help?</label><textarea name="message" placeholder="Tell us a little about your home and dates away…"></textarea>
         <button class="btn" style="margin-top:18px;width:100%">Send request</button>
       </form>

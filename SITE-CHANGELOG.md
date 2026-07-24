@@ -3,6 +3,15 @@
 Every change to the live site is logged here (newest first). The site follows the
 project docs; docs lead, site never leads. Truth gates enforced on every push.
 
+## 2026-07-24 (source attribution dropdown, T211)
+- Added an optional "How did you hear about us?" select (`name="source"`) to BOTH Netlify
+  forms (`quick-request` + `contact`), inserted above each message box. Options are
+  customer-facing phrasings that map 1:1 to the Lead Log channel vocabulary
+  (Marketing Plan section 12): realtor, local-business partner, client referral,
+  friend/neighbor, search, ferry/airport rack card, direct mail, Chamber/directory, Other.
+- CSS: `.form select` now styled identically to inputs/textareas.
+- No copy, claims, pricing, or layout changes otherwise. Truth gates unaffected; no em dashes.
+
 ## 2026-07-23 (Phase B: GO-LIVE)
 - **Published.** Removed the `noindex,nofollow` meta and the demo ribbon; site is now public.
 - Removed the three testimonial placeholders (real ones pending, T149/T198/T199); section
