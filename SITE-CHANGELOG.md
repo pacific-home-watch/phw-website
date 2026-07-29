@@ -3,6 +3,24 @@
 Every change to the live site is logged here (newest first). The site follows the
 project docs; docs lead, site never leads. Truth gates enforced on every push.
 
+## 2026-07-29 (copy edits wave 2, T219 — Collin's 7/24 "Website notes")
+- Hero trust bar: deleted the "We fix what we find" bullet (Collin's ask; also prudent under the
+  T177 repair-bar gray area).
+- Heading: "What even is home watch?" to "What is home watch?".
+- Credentials band, WA Licensed Home Inspector card: appended "WA Home Inspector License #26018894"
+  (RCW 18.280.100 requires the number on inspection-incidental advertising).
+- Our Story, C.R. Ray founder card: "a Washington State home inspector license" to
+  "Washington State home inspector license #26018894".
+- Visit scope kept visual, not inspection-scope: "Electrical panel" to "Obvious electrical issues"
+  in the What-we-check Inside list, and "the electrical panel" to "obvious electrical issues" in the
+  FAQ answer.
+- Home Health Report card: dropped the cost-estimating clause; now "what's aging and what's coming
+  due, so nothing surprises you."
+- **HHR public license/SOP note HELD pending Craig's T177 read** (standing decision: the HHR is a
+  productized record, NOT an inspection, WAC 308-408C avoidance). GC-license mention also parked
+  (T067 unverified, truth gate).
+- No pricing, cadence, forms, or footer/NAP changes. No em dashes.
+
 ## 2026-07-24 (source attribution dropdown, T211)
 - Added an optional "How did you hear about us?" select (`name="source"`) to BOTH Netlify
   forms (`quick-request` + `contact`), inserted above each message box. Options are
