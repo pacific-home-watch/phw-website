@@ -12,9 +12,43 @@
 <meta property="og:url" content="https://pacifichomewatch.com/">
 <meta name="twitter:card" content="summary_large_image">
 <!-- sync-probe: SALISH-122 -->
-<!-- v4 (7/7 night): family review-panel session integrated - home slimmed, services restructured
-     (frequency stated: 1x/2x/4x monthly), à la carte boxed, Keep Watch Together removed (email campaign later),
-     How It Works = horizontal flow + house-mark check graphic, Contact redesigned, fonts/spacing/centering up. -->
+<!-- Build lineage: v4 (7/7 family review panel) -> published 7/23 (T113) -> copy edits
+     wave 2 7/29 (T219) -> NHWA mandatories 8/7 (T234). The prior v4 note here quoted a
+     1x/2x/4x monthly cadence; that figure is SUPERSEDED (Decision Log 8/7) and was
+     dropped rather than carried forward. Visit cadence never displays on the site. -->
+<!--
+  NHWA accreditation mandatories, added 2026-08-07 (T234). Full design record:
+  phw-docs `04_Decision Log` 8/7 + `Renders/PHW-Website-Draft - NHWA Spec (2026-08-07).html`.
+
+  THREE THINGS HERE ARE NHWA REQUIREMENTS, not styling choices. Check the spec
+  before removing or rewording any of them:
+    (a) the Home Watch definition, conspicuous on the home page
+    (b) the NHWA mark, UNMODIFIED, hyperlinked to nationalhomewatchassociation.org
+    (c) the "Accredits Home Watch Services Only" disclaimer, required because we
+        sell ancillary services. It sits in the FOOTER so it shows on every view
+        of this single-page site, plus once in the FAQ.
+
+  FLAG on (a): NHWA asks for their definition verbatim. Ours appends "before they
+  become big problems" and drops "or property" (Andrew 8/7), so it is a modified
+  definition. If a reviewer objects, this keeps the meaning and complies:
+    "Home Watch is a visual inspection of a home or property, looking for obvious
+     issues. We look for them before they become big problems."
+
+  LOGO (b): assets/nhwa-globe-320.png is NHWA current mark taken from their own
+  site, scaled proportionally only. Their legacy /logos/ path 404s since they moved
+  to Wix, so self-hosting is the only placement that will not break. If Cindy sends
+  the official iframe snippet, paste it inside the existing <a> and drop the img.
+
+  HERO: assets/hero-lighthouse-wide.jpg is the shoreline photo pre-cropped to
+  1920x711 with the lighthouse mast 25px below the top edge, anchored with
+  background-position-y 0. That combination is deliberate. The uncropped original
+  (hero-lighthouse-shoreline.jpg) is the master; keep it. A near-square photo in a
+  wide band gets cropped by an amount that varies with viewport width, so a
+  percentage position cannot hold the framing: "center" clipped the mast by 14px at
+  1500px wide and 136px at 2560px. Top-anchoring a pre-cropped image locks it
+  instead. If the hero height changes, re-cut from the master. Do not reach for a
+  percentage.
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,11 +105,12 @@
   .hero .sub{font-size:1.3rem;max-width:640px;margin:0 auto 1.7em;color:#e9ece6}
   .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   /* photo hero (homepage only): green tint over image keeps white text legible + on-brand */
+  /* Pre-cropped, top-anchored. position-y MUST stay 0. See header. */
   .hero--photo{
     background:
       linear-gradient(135deg,rgba(38,53,43,.74) 0%,rgba(46,64,52,.64) 55%,rgba(55,80,63,.56) 100%),
-      url("assets/hero-lighthouse-shoreline.jpg");
-    background-size:cover;background-position:center;
+      url("assets/hero-lighthouse-wide.jpg");
+    background-size:cover;background-position:90% 0;
   }
   /* full-width scenery band with dark overlay + white caption */
   .photoband{position:relative;display:flex;align-items:center;min-height:300px;text-align:center;color:#fff;padding:64px 0}
@@ -103,7 +138,8 @@
   /* 3-up + 1 wide (pricing-style) card layout */
   .cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:32px}
   .card.wide{display:flex;align-items:center;gap:40px;margin-top:22px}
-  .card.wide h3{margin:0;flex:0 0 32%}
+  /* h3 hugs its text so the wide-card sentence sets on one line. */
+  .card.wide h3{margin:0;flex:0 0 auto;white-space:nowrap}
   .card.wide p{margin:0}
   @media(max-width:760px){.cards3{grid-template-columns:1fr}.card.wide{flex-direction:column;align-items:flex-start;gap:12px}.card.wide h3{flex:none}}
   .band{background:var(--fir);color:var(--fog);text-align:center}
@@ -111,7 +147,8 @@
   .panel{background:var(--seaglass);border-radius:12px;padding:38px}
   .lead{font-size:1.2rem;color:#43413b}
   /* simple service list (replaces the comparison table) */
-  .plainlist{list-style:none;margin:30px auto 0;padding:0;max-width:560px;font-size:1.1rem}
+  /* max-content so the list centres optically, rows stay left-aligned. */
+  .plainlist{list-style:none;margin:30px auto 0;padding:0;width:max-content;max-width:100%;font-size:1.1rem}
   .plainlist li{padding:11px 0 11px 34px;border-bottom:1px solid var(--seaglass);position:relative;text-align:left}
   .plainlist li::before{content:"✓";position:absolute;left:4px;color:var(--madrona);font-weight:700}
   /* founders strip (home) */
@@ -190,6 +227,43 @@
   footer .tagline{font-size:.95rem;font-family:var(--serif);font-style:italic;margin:0 0 14px;color:#cfd8d0}
   footer p{font-size:.85rem;margin:.3em 0;color:#aebbb0}
   @media(max-width:640px){section{padding:52px 0}section.wrap{padding-top:52px;padding-bottom:52px}.page>section:first-child:not(.hero){padding-top:56px}.page>section:first-child:not(.hero)>.center:first-child{margin-bottom:32px}.hero{padding:66px 0 58px}.lockup .wordmark{font-size:1.05rem}}
+
+  /* ===================================================================
+     NHWA SPEC (read the file header before changing any of this)
+     =================================================================== */
+  /* Definition callout. Conspicuous through scale and isolation rather than a
+     rule or a label, so it reads as our own statement of what we do. NOTE the
+     wording is NOT NHWA verbatim any more; see the header flag.
+     Width tuned so it sets on two balanced lines. */
+  .nhwa-def{
+    margin:0 auto 32px;max-width:760px;padding:30px 34px;text-align:center;
+    background:var(--fog);border:1px solid var(--seaglass);border-radius:12px;
+  }
+  .nhwa-def blockquote{
+    margin:0;font-family:var(--serif);font-weight:600;color:var(--fir);
+    font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.35;
+    text-wrap:balance;
+  }
+  /* NHWA credential block. The mark must not be visually altered. */
+  .nhwa-block{
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:34px;align-items:center;
+    background:#fff;border:1px solid var(--seaglass);border-radius:10px;padding:30px;margin-top:22px;
+  }
+  .nhwa-block h3{margin-top:0}
+  .nhwa-block p:last-child{margin-bottom:0}
+  /* No hover filter, border or background: the mark must not be altered. */
+  .nhwa-logo{display:block;flex:0 0 auto;line-height:0}
+  .nhwa-logo img{display:block;width:150px;height:auto;max-width:100%}
+  @media(max-width:760px){
+    .nhwa-block{grid-template-columns:1fr;gap:22px;justify-items:center;text-align:center}
+  }
+
+  /* Two negatives as a pair, air, then two positives. */
+  .notwhat{max-width:1032px;margin:0 auto}
+  .notwhat p{margin:0 0 .35em}
+  .notwhat p.isit{margin-top:1.15em}
+  .notwhat p:last-child{margin-bottom:0}
+
 </style>
 
 <!-- ===== reusable submark (house + trees icon; sine-wave horizon canonical per 7/9 handback - matches Brand Kit - Logo Files (PHW)) ===== -->
@@ -257,11 +331,22 @@
     </div>
 
     <section style="background:#fff">
-      <div class="wrap center" style="max-width:840px">
-        <div class="eyebrow">New to home watch?</div>
+      <div class="wrap center" style="max-width:1080px">
+        <div class="eyebrow">We are here to help</div>
         <h2>What is home watch?</h2>
-        <p class="lead">Home watch is a regular, professional visual inspection of your home while you're away: looking for the obvious problems that get expensive when no one's there to catch them. If we find something, you hear from us right away, with photos and a clear recommendation.</p>
-        <p style="max-width:700px;margin:0 auto"><strong>It isn't house-sitting</strong> (no one moves in). <strong>And it isn't a security system</strong> (no cameras or alarms). It's a trusted local professional, familiar with your home, checking on it in person and ready to take action.</p>
+
+        <!-- NHWA requirement (a). Read the header flag before editing this. -->
+        <figure class="nhwa-def">
+          <blockquote>Home Watch is a visual inspection of a home looking for obvious issues before they become big problems.</blockquote>
+        </figure>
+
+        <!-- Two things home watch is not, then two things it is. -->
+        <div class="notwhat">
+          <p><strong>It isn't house-sitting</strong> - no one moves in.</p>
+          <p><strong>It isn't a security system</strong> - no cameras or alarms.</p>
+          <p class="isit"><strong>It's a trusted local professional</strong>, familiar with your home, checking on it in-person and ready to take action.</p>
+          <p>If we find something, you hear from us right away, with photos and a clear recommendation.</p>
+        </div>
       </div>
     </section>
 
@@ -286,7 +371,7 @@
           <li>Water, HVAC &amp; plumbing checked on every visit</li>
           <li>A time-stamped photo report, every time</li>
           <li>Repairs coordinated and managed for you</li>
-          <li>Licensed, bonded &amp; insured, and NHWA members</li>
+          <li>Licensed, bonded &amp; insured, and NHWA accredited</li>
           <li>We know your home and act on your behalf</li>
         </ul>
       </div>
@@ -295,11 +380,24 @@
     <section class="wrap">
       <div class="center"><div class="eyebrow">Doing it the right way</div><h2>Backed by more than promises.</h2></div>
       <div class="cards3">
-        <div class="card"><h3>A local craftsman in the field</h3><p>C.R. Ray's trade background means what we find gets fixed correctly and fast.</p></div>
         <div class="card"><h3>Licensed, Bonded &amp; Insured</h3><p>Home-watch-specific coverage, not a generic policy, so the care you trust is backed by real protection.</p></div>
         <div class="card"><h3>WA Licensed Home Inspector</h3><p>Formal inspection training most home watch operators don't have, applied to every visit. WA Home Inspector License #26018894.</p></div>
+        <div class="card"><h3>A local craftsman in the field</h3><p>C.R. Ray's trade background means what we find gets fixed correctly and fast.</p></div>
       </div>
-      <div class="card wide"><h3>NHWA Member</h3><p>National Home Watch Association: industry standards and a code of ethics.</p></div>
+
+      <!-- NHWA requirement (b): mark is unmodified and the <a> IS the required link. -->
+      <div class="nhwa-block" id="nhwa">
+        <a class="nhwa-logo" href="https://nationalhomewatchassociation.org" target="_blank" rel="noopener"
+           aria-label="National Home Watch Association (opens in a new tab)">
+          <img src="assets/nhwa-globe-320.png" width="320" height="320"
+               alt="National Home Watch Association accredited member">
+        </a>
+        <div class="nhwa-copy">
+          <h3>NHWA accredited member</h3>
+          <p>Pacific Home Watch is an accredited member of the National Home Watch Association, the body that sets the standards and the code of ethics for professional home watch. Accreditation is granted only to companies that meet its requirements for insurance, bonding, background screening, and business practice, and it is reviewed by the association rather than claimed by the company. It is the single most useful question to ask any provider you are considering.</p>
+        </div>
+      </div>
+
       <div class="center" style="margin-top:26px"><button class="btn alt" data-go="story">Read our story</button></div>
     </section>
 
@@ -379,31 +477,35 @@
     </section>
   </div>
 
-  <!-- ============ SERVICES & PLANS (monthly plans + à la carte box + Home Health Report · Keep Watch Together removed → future email campaign) ============ -->
+  <!-- ============ SERVICES & PLANS (plans + à la carte box + Home Health Report · Keep Watch Together removed → future email campaign) ============ -->
   <div class="page" id="services">
     <section class="wrap">
       <div class="center"><div class="eyebrow">Services &amp; Plans</div>
+
+        <!-- "Monthly" = billing, not visit frequency. NHWA bars offering monthly
+             VISITS; our cadence (Essential 2x/mo, Signature 4x/mo, Estate
+             at-will) complies. Decision Log 8/7 has alternative wording. -->
         <h2>Monthly home watch plans.</h2>
         <p class="lead">Ongoing care, on a schedule. Every plan includes a time-stamped photo report on every visit, and there are no long-term contracts: stay because it's working, not because you're locked in.</p></div>
       <div class="plans">
         <div class="plan">
           <span class="tag">Essential</span>
           <div class="price"><span class="from">From</span>$199<small>/mo</small></div>
-          
+
           <ul><li>Interior &amp; exterior checks</li><li>Storm check after major weather events</li><li>Mail &amp; package watch</li><li>Photo report every visit</li></ul>
           <button class="btn ghost" style="color:var(--fir);margin-top:auto" data-go="contact">Request a Visit</button>
         </div>
         <div class="plan feature">
           <span class="tag" style="background:var(--fir);color:#fff">Signature · most chosen</span>
           <div class="price"><span class="from">From</span>$349<small>/mo</small></div>
-          
+
           <ul><li>Everything in Essential</li><li>Broader systems checks</li><li>Priority response after widespread weather events</li></ul>
           <button class="btn" style="margin-top:auto" data-go="contact">Request a Visit</button>
         </div>
         <div class="plan">
           <span class="tag">Estate</span>
           <div class="price"><span class="from">From</span>$499<small>/mo</small></div>
-          
+
           <ul><li>Everything in Signature</li><li>For larger homes &amp; outbuildings</li><li>Dedicated point of contact</li></ul>
           <button class="btn ghost" style="color:var(--fir);margin-top:auto" data-go="contact">Request a Visit</button>
         </div>
@@ -421,9 +523,11 @@
       <div class="panel" style="margin-top:18px;text-align:center;background:#fff;border:1px solid var(--seaglass)">
         <div class="eyebrow">A full picture of your home</div>
         <h3 style="font-size:1.5rem;margin-top:0">Home Health Report</h3>
-        <p style="margin:0 auto 10px;max-width:620px">A deeper, documented analysis of your home's condition and maintenance needs, beyond the routine visit: what's aging and what's coming due, so nothing surprises you.</p>
+        <p style="margin:0 auto 10px;max-width:770px;text-wrap:balance">A deeper, documented analysis of your home's condition and maintenance needs, beyond the routine visit: what's aging and what's coming due, so nothing surprises you.</p>
         <p style="margin:0;font-weight:600;color:var(--fir)">Pricing being finalized · Ask us</p>
       </div>
+
+
       <div class="center" style="margin:38px auto 0"><button class="btn" data-go="contact">Get your rate</button></div>
     </section>
   </div>
@@ -458,10 +562,19 @@
     <section class="wrap" style="max-width:800px">
       <div class="center"><div class="eyebrow">FAQ</div><h2>Common questions.</h2></div>
       <div style="margin-top:32px">
-        <details class="faq" open><summary>What exactly is home watch?</summary><p>Regular, professional visual checks of your home while you're away, inside and out, looking for the obvious problems that get expensive when no one's there to catch them. If we find something, you hear from us right away.</p></details>
+
+        <!-- Same definition wording as the home page, deliberately. -->
+        <details class="faq" open><summary>What exactly is home watch?</summary><p>Home Watch is a visual inspection of a home looking for obvious issues before they become big problems. In practice that means regular, professional visual checks of your home while you're away, inside and out, catching the things that get expensive when no one is there to notice them. If we find something, you hear from us right away.</p></details>
+
         <details class="faq"><summary>Why not just ask a neighbor?</summary><p>A neighbor doing a favor is a kind gesture, until something goes wrong. When a pipe bursts or a storm hits, you want a professional who knows your home, is insured to act, and can coordinate a fix fast. That's a service, not a favor.</p></details>
         <details class="faq"><summary>What do you check on a visit?</summary><p>Doors and windows, water leaks, HVAC, plumbing and appliances, obvious electrical issues, signs of pests or mold, the roof and gutters from the ground, storm damage, and mail or packages. We tailor the checklist to your home.</p></details>
         <details class="faq"><summary>What happens if you find a problem?</summary><p>We contact you right away with photos and a recommendation. For everyday issues we wait for your go-ahead; in a true emergency we act fast to limit the damage and keep you informed throughout.</p></details>
+
+        <!-- NHWA recommends explaining accreditation; also carries (c). -->
+        <details class="faq"><summary>What does NHWA accreditation mean?</summary><p>The National Home Watch Association is the industry body for professional home watch. It sets the standards and the code of ethics, and it accredits companies that meet its requirements for insurance, bonding, background screening, and business practice. Accreditation is reviewed by the association rather than claimed by the company, which is what makes it worth asking any provider about. Pacific Home Watch is an accredited member. The NHWA Accredits Home Watch Services Only, so our maintenance, concierge, remodeling, and repair work sits alongside our home watch service rather than under that accreditation.</p></details>
+
+        <details class="faq"><summary>How often will you visit?</summary><p>On a set schedule we agree together, weekly or every other week depending on your home and how long you are away. We do not recommend longer gaps: a month is a long time for water, and your insurer may set a maximum gap for an unoccupied home. We confirm your schedule after we walk the property with you.</p></details>
+
         <details class="faq"><summary>Can you handle mail and packages?</summary><p>Mail and package checks are part of every routine visit. Expecting a delivery between visits? We can make a special trip as an à la carte service, billed hourly.</p></details>
         <details class="faq"><summary>Is this a security service?</summary><p>No, we're not an alarm or camera company. We are a regular professional presence in your home, and that is its own deterrent. We'll spot trouble a security system never would, like a slow leak under a sink.</p></details>
         <details class="faq"><summary>Do you serve all of San Juan Island?</summary><p>Yes: Friday Harbor, Roche Harbor, and across San Juan Island. Right now San Juan Island is our only service area; we expect to consider neighboring islands in the future.</p></details>
@@ -503,7 +616,7 @@
         <label>How can we help?</label><textarea name="message" placeholder="Tell us a little about your home and dates away…"></textarea>
         <button class="btn" style="margin-top:18px;width:100%">Send request</button>
       </form>
-      <p style="text-align:center;color:var(--salish);font-weight:600;margin-top:34px">Licensed, bonded &amp; insured · Serving San Juan Island</p>
+      <p style="text-align:center;color:var(--salish);font-weight:600;margin-top:34px">NHWA accredited · Licensed, bonded &amp; insured · Serving San Juan Island</p>
     </section>
   </div>
 </main>
@@ -516,8 +629,13 @@
   <p class="tagline">Proven peace of mind.</p>
   <p>Friday Harbor · San Juan Island, WA · (360) 207-4529 · Licensed, bonded &amp; insured</p>
   <p>get@pacifichomewatch.com · pacifichomewatch.com</p>
+
+  <!-- NHWA requirement (c). In the footer so it shows on every view. -->
+  <p>The NHWA Accredits Home Watch Services Only · <a href="https://nationalhomewatchassociation.org" target="_blank" rel="noopener" style="color:#cfd8d0">National Home Watch Association</a></p>
+
   <p>© 2026 Pacific Home Watch · RAY YOKOM LLC dba Pacific Home Watch</p>
 </footer>
+
 
 <script>
   const pages = document.querySelectorAll('.page');
