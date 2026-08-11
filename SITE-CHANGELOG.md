@@ -3,6 +3,20 @@
 Every change to the live site is logged here (newest first). The site follows the
 project docs; docs lead, site never leads. Truth gates enforced on every push.
 
+## 2026-08-10 (DBA removed from the footer)
+
+Footer copyright line drops the legal-entity string and now reads "© 2026 Pacific Home Watch".
+
+Andrew's call, 8/10: no DBA on any forward-facing marketing surface, only Pacific Home Watch.
+This is not a new rule so much as an enforcement of an existing one. The Brand System Manifest
+already said "RAY YOKOM LLC never appears on any marketing surface (legal instruments only)",
+while the START_HERE conventions line said marketing carried a footer disclosure. The two
+contradicted each other and the site had followed the wrong one since the 7/23 publish.
+START_HERE has been corrected in phw-docs.
+
+Legal instruments (client services agreement, bank, insurance, filings) keep the full
+"RAY YOKOM LLC dba Pacific Home Watch" and are unaffected.
+
 ## 2026-08-07 (NHWA accreditation mandatories, T234)
 
 Brings the site into line with the NHWA accreditation website requirements ahead of the
