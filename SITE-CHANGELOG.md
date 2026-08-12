@@ -3,6 +3,20 @@
 Every change to the live site is logged here (newest first). The site follows the
 project docs; docs lead, site never leads. Truth gates enforced on every push.
 
+## 2026-08-11 (pricing removed from Services & Plans)
+
+Dollar figures dropped from the three plan cards (Essential/Signature/Estate) and the
+à la carte panel (additional work, emergency response). Tier names, inclusions, and
+"Request a Visit" CTAs are unchanged; the plan cards now read the same way the Home
+Health Report panel already did ("ask us" instead of a number). The existing
+"Every home is different. Your exact rate is set after we walk your home together."
+line under the plans already covered this, so no new copy was needed there.
+
+Andrew's call, 8/11, on a suggestion from Jack Luber (NHWA) submitted through the
+site's own contact form during his compliance review (T173): displayed pricing was,
+in his experience, lowering inquiry volume. Not an NHWA requirement, just a business
+call Andrew made after the suggestion.
+
 ## 2026-08-10 (DBA removed from the footer)
 
 Footer copyright line drops the legal-entity string and now reads "© 2026 Pacific Home Watch".
