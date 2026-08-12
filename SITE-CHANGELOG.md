@@ -3,6 +3,16 @@
 Every change to the live site is logged here (newest first). The site follows the
 project docs; docs lead, site never leads. Truth gates enforced on every push.
 
+## 2026-08-11 (NHWA badge swapped for their official mark)
+
+Replaced the self-hosted placeholder (`assets/nhwa-globe-320.png`) in the NHWA
+credential block with `assets/nhwa-accredited-member.jpg`, the badge NHWA (Lisa
+Bender) emailed Andrew that afternoon. It carries NHWA's own "PRELIMINARY"
+watermark, kept as-is (mark not visually altered) — their convention pending the
+final accreditation review, not a mistake. `href` to nationalhomewatchassociation.org
+is unchanged, so requirement (b) still holds. Old placeholder asset left in the repo,
+just unreferenced now.
+
 ## 2026-08-11 (pricing removed from Services & Plans)
 
 Dollar figures dropped from the three plan cards (Essential/Signature/Estate) and the
